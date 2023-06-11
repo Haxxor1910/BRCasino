@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    </head>
+<!-- Head -->    
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Bloodrage</title>
+<script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"> </script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/js/all.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-contextmenu/2.7.1/jquery.contextMenu.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-contextmenu/2.7.1/jquery.ui.position.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/highlight.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+<script src="/js/main.js?v=1620764138788"></script>
+<link rel="stylesheet" href="https://bootswatch.com/4/cyborg/bootstrap.min.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-contextmenu/2.7.1/jquery.contextMenu.min.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/styles/androidstudio.min.css"/>
+<link rel="stylesheet" href="../public/css/roulette.css"/>
+<link rel="stylesheet" href="../public/css/duels.css"/>
+<link rel="stylesheet" href="../public/css/jackpot.css"/>
+<link rel="stylesheet" href="../public/css/style.css"/>
+<!-- Head ENDE -->  
+<!-- NAV -->  
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark"><a class="navbar-brand" href="/"><img src="/img/main_text.png" style="width: 100px;"/></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+  <div class="collapse navbar-collapse" id="navbarColor02">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item" data-link="/"><a class="nav-link" href="/"><i class="fas fa-home"></i> Roulette</a></li>
+      <li class="nav-item" data-link="/duels"><a class="nav-link" href="/duels"><i class="fas fa-circle-notch"></i> Duels</a></li>
+      <li class="nav-item" data-link="/jackpot"><a class="nav-link" href="/jackpot"><i class="fas fa-vector-square"></i> Jackpot</a></li>
+      <li class="nav-item" data-link="/fair"><a class="nav-link" href="/fair"><i class="fas fa-check-circle"></i> Provably Fair</a></li>
+      <li class="nav-item" data-link="/affiliates"><a class="nav-link" href="/affiliates"><i class="fas fa-users"></i> Affiliates</a></li>
+    </ul>
+    <div class="form-inline my-2 my-lg-0"><a href="/auth/steam"><img src="/img/steam.png" style="width: 150px;"/></a>
+    </div>
+  </div>
+</nav>
+<!-- NAV ENDE -->      
+<!-- CONTENT -->      
+<!DOCTYPE html>
+<html lang="en">
+  <head></head>
+  <body>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tbody>
+    <tr>
+      <td>
+    <div class="roulette">
+        <div class="roulette-roll-text">
+          <div class="roll-text">Connecting...</div>
+        </div>
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+        </div>
+        <div class="roulette-wrapper">
+          <div class="selector"></div>
+          <div class="wheel"></div>
+        </div>
+        <div class="roulette-info">
+          <div class="round_info">Round hash: - Round created:</div>
+        </div>
+        <div class="roulette-set-bet">
+          <div class="form-group" style="z-index: 999;">
+            <input class="form-control" type="number" min="1" value="0" id="RBet"/>
+          </div>
+          <div class="form-group" style="z-index: 999;">
+            <button class="btn btn-danger rbet" type="button" data-action="clear">CLEAR</button>
+            <button class="btn btn-primary rbet" type="button" data-action="+10">+10</button>
+            <button class="btn btn-primary rbet" type="button" data-action="+100">+100</button>
+            <button class="btn btn-primary rbet" type="button" data-action="+1000">+1,000</button>
+            <button class="btn btn-primary rbet" type="button" data-action="+10000">+10,000</button>
+            <button class="btn btn-primary rbet" type="button" data-action="+100000">+100,000</button>
+            <button class="btn btn-primary rbet" type="button" data-action="1/2">1/2</button>
+            <button class="btn btn-primary rbet" type="button" data-action="x2">x2</button>
+          </div>
+          <div class="form-group rollsHistory"></div>
+        </div>
+        <div class="roulette-bets">
+          <div class="red-bets">
+            <div class="red-bet rbetbtn" data-bet="red">1 to 7, Win 2x</div>
+            <div class="red-players"></div>
+          </div>
+          <div class="green-bets">
+            <div class="green-bet rbetbtn" data-bet="green">0, Win 14x</div>
+            <div class="green-players"></div>
+          </div>
+          <div class="black-bets">
+            <div class="black-bet rbetbtn" data-bet="black">8 to 14, Win 2x</div>
+            <div class="black-players"></div>
+          </div>
+            <div class="chat">
+        <div class="chat-header"><i class="fas fa-comment-dots chatInt"></i>&nbsp;Chat <span class="onlineusers" style="font-size: 14px;">0</span></div>
+        <div class="chat-messages"></div>
+        <div class="chat-body">
+          <input class="chat-input form-control" type="text" placeholder="Type a message.."/>
+          <button class="chat-btn btn btn-primary" type="button"><i class="fas fa-paper-plane"></i></button>
+        </div>
+      </div>
+      <div class="chatInt" id="chatInt" style="opacity: 0"><i class="far fa-comments"></i></div>
+        </div>
+      </div>        
+    </td>
+    </tr>
+  </tbody>
+</table>
+  </body>
+</html>
+<!-- CONTENT ENDE -->     
+<!-- MODALS -->
+
+<!-- MODALS ENDE -->     
+</html>

@@ -1,0 +1,143 @@
+body .Duels {
+    display: flex;
+    flex-direction: row;
+    height: calc(100hv - 200px)
+}
+
+body .duels {
+    width: 80%;
+}
+
+.duels .top {
+    padding: 25px;
+}
+
+.duels .games {
+    width: 100%;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.duels .games .game {
+    background: #18181D;
+    width: 250px;
+    height: 250px;
+    border-radius: 16px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.duels .games .game .join_game {
+    position: absolute;
+    width: 250px;
+    height: 125px;
+    display: flex;
+    justify-content: center;
+    margin-top: 62.5px;
+}
+
+.copySecret {
+    cursor: alias;
+}
+
+.duels .games .game .seconds {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+}
+
+.duels .games .game .seconds div {
+    margin: auto;
+    font-weight: bold;
+    font-size: 35px;
+}
+
+.duels .games .game .join_game button {
+    width: 80%;
+    height: 50px;
+    margin: auto;
+    font-weight: bold;
+    opacity: 0;
+    transition: .2s ease-in opacity;
+    z-index: 9999;
+}
+
+.duels .games .game .top {
+    padding: 18px;
+    display: flex;
+    justify-content: space-between;
+    transition: .2s ease-in opacity;
+}
+
+.duels .games .game .canvas {
+    width: 130px;
+    height: 130px;
+    /* background-color: #ff000047; */
+    margin: auto;
+    border-radius: 50%;
+    transition: .2s ease-in opacity;
+    
+}
+
+.duels .games .game .canvas canvas {
+    /* transition: all 6000ms cubic-bezier(0.005, 0.005, 0.455, 0.99) 0s; */
+}
+
+.duels .games .game .canvas .pointer {
+    display: flex;
+    justify-content: center;
+    margin-top: -30px;
+    font-size: 25px;
+}
+
+.duels .games .game .game_number {
+    font-size: 10px;
+    text-align: center;
+    color: #ffffff59;
+    transition: .2s ease-in opacity;
+}
+
+.duels .games .game .players {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    transition: .2s ease-in opacity;
+}
+
+.duels .games .game .players .player {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    justify-content: center;
+}
+
+.duels .games .game .players .player .img {
+    margin-right: 10px;
+    align-items: center;
+    display: flex;
+}
+
+.duels .games .game .players .player .img img {
+    width: 20px;
+    border-radius: 50%;
+}
+
+.duels .games .game .players .player .name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 60px;
+}
+
+.showDuelsFair {
+    cursor: pointer;
+    z-index: 9999999;
+}
+
+.showDuelsFair:hover {
+    color: lightgreen;
+}

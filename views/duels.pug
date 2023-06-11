@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        include includes/head.pug
+    body
+        include includes/nav.pug
+        .jumbotron.Duels
+            .duels
+                .top
+                    button.btn.btn-danger(type='button', data-toggle="modal", data-target="#createDuel") CREATE DUEL
+                .games
+            .chat
+                .chat-header
+                    i.fas.fa-comment-dots.chatInt
+                    | &nbsp;Chat 
+                    span.onlineusers(style="font-size: 14px;") 0
+                .chat-messages
+                    //- .chat-message(data-steamid="123123123123")
+                    //-     .avatar
+                    //-         img(src='https://www.gravatar.com/avatar/47fc212c73eedb0d834e33ff7ff78339?s=256')
+                    //-     .user
+                    //-         .name Echo
+                    //-         .message
+                    //-         | This is a test message... asdsajd asdasjdasjdoaspjasopdsaopdjas poasjopasjdopasjdoas jdsaop das
+                .chat-body
+                    input.chat-input.form-control(type='text' placeholder='Type a message..')
+                    button.chat-btn.btn.btn-primary(type='button')
+                        i.fas.fa-paper-plane
+            #chatInt.chatInt(style="opacity: 0")
+                i.far.fa-comments
+            
+
+
+        //- MODALS
+        include includes/modals.pug

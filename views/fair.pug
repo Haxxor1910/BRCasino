@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        include includes/head.pug
+    body
+        include includes/nav.pug
+        .jumbotron
+            h3
+                i.fas.fa-check-circle
+                |  Provably fair
+            p
+                strong ES Core v1.0
+                | &apos;s provably fair is unique apart other Roulette&apos;s websites.
+            p
+                strong ES Core v1.0
+                |  uses 4 parameters to generate the outcome of the Roulette
+            p
+                | The outcome can be generated with the following algorithm on any node.js environment with 
+                strong md5
+                |  and 
+                strong sha256
+                |  modules:
+            pre
+                code.javascript
+                    | const md5 = require("md5");
+                    | const sha256 = require("sha256");
+                    | 
+                    | const OUTCOME = "0";
+                    | const ROUND_CREATED = "7/14/2020, 10:31:12 PM";            // Timestamp when round was created.   
+                    | const ROUND_HASH = md5(ROUND_CREATED);                     // MD5 of Timestamp.
+                    | const SECRET = "vo1Ee1o11CSv";                             // A 12-characters string randomly generated from "ESCorev1" characters.
+                    | const ROUND_ENDED = "7/14/2020, 10:31:32 PM";              // Timestamp when round has ended.
+                    |
+                    | const GEN_OUTCOME = hexdec(sha256(`${ROUND_HASH}-${SECRET}-${ROUND_ENDED}`).substr(0, 8)) % 15;
+                    |
+                    | if(GEN_OUTCOME == OUTCOME) console.log(`This round is fair!`);
+                    | else console.log(`This round is not fair!`); 
+                    |
+                    | function hexdec(string) { return parseInt((string + '').replace(/[^a-f0-9]/gi, ''), 16); }
+            P To learn more about our Provably Fair check this 
+                a(href="https://repl.it/@AlaDyn172/ES-Core-v10-Provably-fair-by-Echo", target="_blank") link
+                | .
+            h5 Last Roulette Rounds
+            table.table.table-hover
+                thead
+                    tr
+                        th(scope='col') Round Hash
+                        th(scope='col') Round Started
+                        th(scope='col') Round Ended
+                        th(scope='col') Secret
+                        th(scope='col') Rolled
+                tbody.lastRounds
+            
+
+
+        //- MODALS
+        include includes/modals.pug

@@ -1,0 +1,102 @@
+.roulette-wrapper{
+  position:relative;
+  display:flex;
+  justify-content:center;
+  width:100%;
+  margin:0 auto;
+  overflow:hidden;
+}
+
+.roulette-wrapper .selector{
+  width:3px;
+  background:grey;
+  left:50%;
+  height:100%;
+  transform:translate(-50%,0%);
+  position:absolute;
+  z-index:2;
+}
+
+.roulette-wrapper .wheel{
+  display:flex;
+}
+
+.roulette-wrapper .wheel .roww{
+  display:flex;
+}
+
+.roulette-wrapper .wheel .roww .card{
+  height:75px;
+  width:75px;
+  margin:3px;
+  border-radius:8px;
+  border-bottom:3px solid rgba(0,0,0,0.2);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:white;
+  font-size:1.5em;
+}
+
+.card.red{
+  background:#F95146;
+}
+
+.card.black{
+  background:#2D3035;
+}
+
+.card.green{
+  background:#00C74D;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+.rollsHistory {
+  display: flex;
+  margin-left: 3rem;
+  background-color: #060606;
+  padding: 5px;
+  border-radius: 15px;
+  position: absolute;
+  left: 0;
+}
+
+.rollsHistory .bhist {
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  border-radius: 50%;
+  color: white;
+  font-weight: bold;
+  line-height: 1.6rem;
+  margin-right: 0.15rem;
+}
+
+.rollsHistory .bhist.black {
+  background-color: #2D3035;
+}
+
+.rollsHistory .bhist.red {
+  background-color: #F95146;
+}
+
+.rollsHistory .bhist.green {
+  background-color: #00C74D;
+}
+
+.rollsHistory div:first-child {
+  border: 1px solid white;
+}
+
+.roulette-info {
+  text-align: center;
+  font-size: 10px;
+}
+
+.roulette-roll-text div {
+  color: white;
+  font-weight: bold;
+}

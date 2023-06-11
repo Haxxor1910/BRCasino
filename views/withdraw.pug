@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        include includes/head.pug
+    body
+        include includes/nav.pug
+        .jumbotron
+            h3
+                i.fas.fa-minus-square
+                | &nbsp;XRP Withdraw
+            .withdraw_top
+                .form-group
+                    label(for="withdraw_address") Withdraw Address:
+                    input.form-control(id="withdraw_address", type="text", placeholder="e.g: 0x5a3B244Ba72df9C230b2da87AE473cBbecBC2FCA")
+                .form-group
+                    label(for="withdraw_dest_tag") Withdraw Dest. tag:
+                    input.form-control(id="withdraw_dest_tag", type="text", placeholder="e.g: 123456789")
+                .form-group
+                    label(for="withdraw_amount") Withdraw amount
+                    input.form-control(id="withdraw_amount", type="number", min="500", value="500", step="10")
+                .form-group
+                    small Note: Please check the withdraw address twice before clicking Withdraw button. Any amount send to an incorrect address are not refundable!
+                    button.btn.btn-success(id="withdraw_btn")
+                        i.fas.fa-minus-square
+                        | &nbsp;Withdraw
+
+            
+
+
+        //- MODALS
+        include includes/modals.pug

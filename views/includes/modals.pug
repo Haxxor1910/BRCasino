@@ -1,0 +1,155 @@
+//- LOGIN MODAL
+#loginModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='loginModal', aria-hidden='true')
+    .modal-dialog(role='document')
+        .modal-content
+            .modal-header
+                h5#loginModal.modal-title Login
+                button.close(type='button', data-dismiss='modal', aria-label='Close')
+                    span(aria-hidden='true') &times;
+            .modal-body
+                .form-group
+                    label(for="LUsername") Username:
+                    input.form-control(id="LUsername", type="text", autocomplete="off")
+                .form-group
+                    label(for="LPassword") Password:
+                    input.form-control(id="LPassword", type="password", autocomplete="off")
+            .modal-footer
+                button.btn.btn-secondary(type='button', id="goto_register_btn")
+                    i.fas.fa-user-plus
+                    |  Register
+                button.btn.btn-primary(type='button', id="login_btn")
+                    i.fas.fa-sign-in-alt
+                    |  Login
+
+//- REGISTER MODAL
+#registerModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='registerModal', aria-hidden='true')
+    .modal-dialog(role='document')
+        .modal-content
+            .modal-header
+                h5#registerModal.modal-title Register
+                button.close(type='button', data-dismiss='modal', aria-label='Close')
+                    span(aria-hidden='true') &times;
+            .modal-body
+                .form-group
+                    label(for="RUsername") Username:
+                    input.form-control(id="RUsername", type="text", autocomplete="off")
+                .form-group
+                    label(for="REmail") Email:
+                    input.form-control(id="REmail", type="text", autocomplete="off")
+                .form-group
+                    label(for="RPassword") Password:
+                    input.form-control(id="RPassword", type="password", autocomplete="off")
+                .form-group
+                    label(for="RPassword2") Confirm Password:
+                    input.form-control(id="RPassword2", type="password", autocomplete="off")
+            .modal-footer
+                button.btn.btn-secondary(type='button', id="register_btn")
+                    i.fas.fa-user-plus
+                    |  Register
+
+//- CREATE DUEL MODAL
+#createDuel.modal.fade(tabindex='-1', role='dialog', aria-labelledby='createDuel', aria-hidden='true')
+    .modal-dialog(role='document')
+        .modal-content
+            .modal-header
+                h5.modal-title Create Duel
+                button.close(type='button', data-dismiss='modal', aria-label='Close')
+                    span(aria-hidden='true') &times;
+            .modal-body
+                .form-group
+                    label(for="CCBetAmount") Bet Amount:
+                    input.form-control(id="CCBetAmount", type="number", value="10", min="10", autocomplete="off")
+                .form-group
+                    label(for="CCPlayers") Max Players:
+                    select.form-control(id="CCPlayers")
+                        option(value="2") 2
+                        option(value="3") 3
+                        option(value="4") 4
+            .modal-footer
+                button.btn.btn-secondary(type='button', id="createduel_btn")
+                    i.fas.fa-plus-square
+                    |   Create
+
+#duelFair.modal.fade(tabindex='-1', role='dialog', aria-labelledby='createDuel', aria-hidden='true', style="z-index: 99999999999;")
+    .modal-dialog.modal-lg(role='document')
+        .modal-content
+            .modal-header
+                h5.modal-title Duels - Provably Fair
+                button.close(type='button', data-dismiss='modal', aria-label='Close')
+                    span(aria-hidden='true') &times;
+            .modal-body
+                div(style="font-weight:bold;") The Duels provably fair is based on 3 strings.
+                div(style="font-weight:bold;margin-bottom:15px;") The Final String is a hash which represents the actual hash to determine the winner through parsing.
+                pre
+                    code.javascript
+                        | // Secret is a time Base64 string generated right when Duel is created.
+                        | const SECRET = "
+                        span.duel_secret
+                        | ";
+                        |
+                        | // Players is a string created from a JSON object with all players joined the duel at the end of the Duel lobby.
+                        | const PLAYERS = `
+                        span.duel_players
+                        | `;
+                        |
+                        | // Timestamp is a UNIX TIMESTAMP string created when the last player entered the Duel.
+                        | const TIMESTAMP = "
+                        span.duel_timestamp
+                        | ";
+                        |
+                        | // Hash is a sha512 string created from concatenation of secret, players and timestamp strings.
+                        | const HASH = "
+                        span.duel_hash
+                        | ";
+                        |
+                        | // Ticket winner represents the % of the winner generated from HASH. E.g: 2 players in a duel will have 50%-50% chances to win, 3 players 33.33%-33.33%-33.33%, 4 players 25%-25%-25%-25%.
+                        | const TICKET_WINNER = parseFloat(parseFloat((parseInt(HASH, 16) % 10000 + 1)/100).toFixed(2));
+                        |
+                        | // TICKET_NUMBER OUTPUT: 
+                        span.duel_ticket_number
+                div(style="font-weight:bold;") You can generate the same outcome using the following Node.js online executor:
+                a(href="https://repl.it/languages/nodejs", target="_blank") Online executor
+                div(style="font-weight:bold;") You need to use the source code from:
+                a(href="https://repl.it/@AlaDyn172/ESCore-v10-Duels-provably-fair#index.js", target="_blank") Source code
+
+#jackpotFair.modal.fade(tabindex='-1', role='dialog', aria-labelledby='jackpotFair', aria-hidden='true', style="z-index: 99999999999;")
+    .modal-dialog.modal-lg(role='document')
+        .modal-content
+            .modal-header
+                h5.modal-title Jackpot - Provably Fair
+                button.close(type='button', data-dismiss='modal', aria-label='Close')
+                    span(aria-hidden='true') &times;
+            .modal-body
+                div(style="font-weight:bold;") The Jackpot provably fair is based on 3 strings.
+                div(style="font-weight:bold;margin-bottom:15px;") The Final String is a hash which represents the actual hash to determine the winner through parsing.
+                pre
+                    code.javascript
+                        | // Secret is a time Base64 string generated right when Duel is created.
+                        | const SECRET = "
+                        span.jp_secret
+                        | ";
+                        |
+                        | // Players is a string created from a JSON object with all players joined the duel at the end of the Duel lobby.
+                        | const PLAYERS = `
+                        span.jp_players
+                        | `;
+                        |
+                        | // Timestamp is a UNIX TIMESTAMP string created when the last player entered the Duel.
+                        | const TIMESTAMP = "
+                        span.jp_timestamp
+                        | ";
+                        |
+                        | // Hash is a sha512 string created from concatenation of secret, players and timestamp strings.
+                        | const HASH = "
+                        span.jp_hash
+                        | ";
+                        |
+                        | // Ticket winner represents the % of the winner generated from HASH.
+                        | const TICKET_WINNER = parseFloat((parseInt(h, 16) % 10000 + 1));
+                        |
+                        | // TICKET_NUMBER OUTPUT: 
+                        span.jp_ticket_number
+                div(style="font-weight:bold;") You can generate the same outcome using the following Node.js online executor:
+                a(href="https://repl.it/languages/nodejs", target="_blank") Online executor
+                div(style="font-weight:bold;") You need to use the source code from:
+                a(href="https://replit.com/@AlaDyn172/ESCore-v10-Jackpot-provably-fair#index.js", target="_blank") Source code

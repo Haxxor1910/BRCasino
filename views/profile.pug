@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        include includes/head.pug
+    body
+        include includes/nav.pug
+        .jumbotron
+            h3
+                i.far.fa-user
+                | &nbsp;Profile
+            .profile
+                .avatar
+                .info
+                    .name Username
+                    .registered Registered on
+                    .uuid UUID: xxxx-xxxx-xxxx-xxxx
+            .pstatistics
+                .box
+                    .type
+                        i.fas.fa-gamepad.blue
+                        | &nbsp;TOTAL BETS
+                    .amount.rbets 0
+                .box
+                    .type
+                        i.fas.fa-coins.gold
+                        | &nbsp;WAGERED
+                    .amount.wagered 0
+            //- .ptransactions
+            //-     h4
+            //-         i.fas.fa-scroll
+            //-         | &nbsp;Transactions
+            //-     table.table.table-hover
+            //-         thead
+            //-             tr
+            //-                 th(scope='col') Type
+            //-                 th(scope='col') Amount
+            //-                 th(scope='col') TXID
+            //-                 th(scope='col') Timestamp
+            //-                 th(scope='col') Status
+            //-         tbody.pTransactions
+
+
+        //- MODALS
+        include includes/modals.pug

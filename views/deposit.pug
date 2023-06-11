@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        include includes/head.pug
+    body
+        include includes/nav.pug
+        .jumbotron
+            h3
+                i.fas.fa-plus-square
+                | &nbsp;XRP Deposit
+            .deposit_top
+                .form-group
+                    label(for="deposit_address")
+                    small Any amount deposited to the address below will be credited once it has 6 confirmations!
+                    input.form-control(readonly, id="deposit_address", value="Generating address...")
+                    input.form-control(readonly, id="destination_tag", value="", style="margin-top: 5px;")
+                    img.xrprimage(src="https://chart.googleapis.com/chart?cht=qr&chs=200x200&chl=0x5a3B244Ba72df9C230b2da87AE473cFbecBC2FCA")
+                .form-group
+                    strong Coins rate:
+                    b  $1.00 = 
+                        i.fas.fa-coins(style="color: gold;")
+                        | &nbsp;100
+
+            
+
+
+        //- MODALS
+        include includes/modals.pug

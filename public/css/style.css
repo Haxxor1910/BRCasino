@@ -1,0 +1,467 @@
+.navbar-expand-lg .navbar-nav {
+    font-weight: bold;
+    font-size: 16px;
+    flex-direction: row;
+}
+
+.progress {
+    margin-bottom: 15px;
+    background-color: #060606;
+}
+
+.progress .roll-text {
+    position: absolute;
+    left: 0;
+    right: 0;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+#logout {
+    cursor: pointer;
+}
+
+#logout:hover {
+    color: white;
+}
+
+.roulette-bets {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.roulette-bets .red-bets, .roulette-bets .green-bets, .roulette-bets .black-bets {
+    width: 32%;
+}
+
+.roulette-bets .red-bets .red-bet, .roulette-bets .green-bets .green-bet, .roulette-bets .black-bets .black-bet {
+    height: 50px;
+    border-radius: 15px;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    text-align: center;
+    font-size: 25px;
+    line-height: 1.2;
+    cursor: pointer;
+}
+
+.red-players, .green-players, .black-players {
+    padding: 5px;
+}
+
+.red-players .player-bet, .green-players .player-bet, .black-players .player-bet {
+    display: flex;
+    justify-content: space-around;
+    font-weight: bold;
+    color: white;
+    border-bottom: 1px solid #313131;
+    margin-bottom: 5px;
+}
+
+.player-bet .player {
+    margin-left: 10%;
+}
+
+.player-bet .player img {
+    width: 40px;
+    border-radius: 50%;
+}
+
+.player-bet .coins {
+    margin: auto;
+    margin-right: 10%;
+}
+
+.player-bet .coins svg {
+    color: gold;
+}
+
+.roulette-set-bet {
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+.roulette-set-bet .form-group:nth-child(1) input {
+    width: 150px;
+}
+
+.roulette-set-bet .form-group:nth-child(2) {
+    margin-left: 25px;
+    display: flex;
+    justify-content: space-between;
+    width: 600px;
+    flex-wrap: wrap;
+}
+
+.roulette-set-bet .form-group:nth-child(2) button:nth-child(1) {
+    margin-right: 15px;
+}
+
+.red-bet {
+    border: 3px solid #c74138;
+    background-color: #f95146;
+}
+
+.green-bet {
+    border: 3px solid #009f3e;
+    background-color: #00c74d;
+}
+
+.black-bet {
+    border: 3px solid #474747;
+    background-color: #2d3035;
+}
+
+
+.blockq {
+    color: green;
+    background-color: #e8e8e8;
+    font-weight: bold;
+    padding: 15px;
+    width: 51%;
+}
+
+.lastRounds .ball {
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    border-radius: 50%;
+    color: white;
+    font-weight: bold;
+    line-height: 1.6rem;
+    margin-right: 0.15rem;
+    margin-top: -5px;
+}
+
+.lastRounds .ball.red {
+    background-color: #F95146;
+}
+
+.lastRounds .ball.black {
+    background-color: #2D3035;
+}
+
+.lastRounds .ball.green {
+    background-color: #00C74D;
+}
+
+.profile {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    background-color: #060606;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.profile .avatar img {
+    width: 100px;
+    border-radius: 15px;
+}
+
+.profile .info {
+    margin-left: 25px;
+}
+
+.profile .info .name {
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.pstatistics {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.pstatistics .box {
+    width: 250px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: #060606;
+    border-radius: 15px;
+    padding: 15px;
+    margin-right: 15px;
+}
+
+.pstatistics .box .type {
+    font-weight: bold;
+    color: #616161;
+    font-size: 20px;
+}
+
+.pstatistics .box .amount {
+    font-size: 30px;
+    color: white;
+}
+
+.pstatistics .gold {
+    color: gold;
+}
+
+.pstatistics .blue {
+    color: royalblue;
+}
+
+.ptransactions {
+    margin-top: 35px;
+}
+
+body .Roulette {
+    display: flex;
+    flex-direction: row;
+}
+
+body .roulette {
+    width: 100%;
+}
+
+.chat {
+    width: 20%;
+    border: 1px solid #565656;
+    margin-left: 15px;
+    background-color: #060606;
+    border-radius: 15px;
+    height: calc(80vh - 100px);
+}
+
+.chat .chat-header {
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 1px solid #9daf9e;
+}
+
+.chat .chat-messages {
+    padding: 8px;
+    height: calc(100% - 120px);
+    overflow-y: scroll;
+    overflow-x: hidden;
+    margin-bottom: 20px;
+}
+
+.chat .chat-messages .chat-message {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid #2d2d2d;
+    padding-bottom: 5px;
+    margin-bottom: 8px;
+}
+
+.chat .chat-messages .chat-message .avatar img {
+    width: 40px;
+    border-radius: 8px;
+}
+
+.chat .chat-messages .chat-message .user .name {
+    font-weight: bold;
+    color: white;
+}
+
+.chat .chat-messages .chat-message .user .message {
+    word-break: break-all;
+}
+
+.chat .chat-body {
+    padding: 8px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid #9daf9e;
+}
+
+.chat .chat-body input {
+    width: 80%;
+}
+
+.chat .chat-body button {
+    margin-left: 3px;
+}
+
+.chatInt {
+    cursor: pointer;
+}
+
+.chatInt:hover {
+    color: white;
+}
+
+.jumbotron div:nth-child(3).chatInt {
+    font-size: 60px;
+    position: absolute;
+    right: 2.5%;
+    bottom: 5%;
+}
+
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #060606; 
+}
+
+::-webkit-scrollbar-thumb {
+    background: #5d5d5d; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
+/* CONTEXTMENU */
+
+.context-menu-list {
+    position: absolute;
+    display: inline-block;
+    min-width: 13em;
+    max-width: 26em;
+    padding: .25em 0;
+    margin: .3em;
+    font-family: inherit;
+    font-size: inherit;
+    list-style-type: none;
+    background: #060606 !important;
+    border: 1px solid #9daf9e !important;
+    border-radius: 8px;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+}
+
+.context-menu-item {
+    position: relative;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    padding: .2em 2em;
+    color: white !important;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #060606 !important;
+}
+
+.context-menu-item:hover {
+    color: rgb(163, 163, 163) !important;
+}
+
+.context-menu-icon.context-menu-icon--fa5 i, .context-menu-icon.context-menu-icon--fa5 svg {
+    position: absolute;
+    top: .4em !important;
+    left: .5em;
+    color: #2a9fd6 !important;
+}
+
+.aff_top {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.aff_top label {
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.aff_top small {
+    display: block;
+    margin-top: -10px;
+    margin-bottom: 5px;
+}
+
+.aff_top button {
+    margin-top: 10px;
+}
+
+.aff_statistics .form-group:nth-child(1) {
+    display: flex;
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+.aff_statistics .form-group:nth-child(2) {
+    display: flex;
+    font-size: 20px;
+    text-align: center;
+    margin-top: -20px;
+}
+
+.aff_statistics label {
+    width: 25%;
+}
+
+.deposit_top label {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.deposit_top small {
+    display: block;
+    margin-top: -10px;
+    margin-bottom: 5px;
+}
+
+.deposit_top input {
+    width: 25%;
+}
+
+.deposit_top img {
+    margin-top: 15px;
+}
+
+.deposit_top .form-group:nth-child(2) {
+    background-color: black;
+    width: 200px;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.withdraw_top .form-group label {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.withdraw_top .form-group input {
+    width: 15%;
+}
+
+.withdraw_top .form-group small {
+    display: block;
+    margin-top: -10px;
+    margin-bottom: 5px;
+}
+
+.userProfile {
+    display: flex;
+    align-items: center;
+}
+
+.user-balance {
+    font-weight: bold;
+    margin-right: 15px;
+}
+
+.user-balance svg {
+    margin-left: 5px;
+}
+  
+.user-balance .gold {
+    color: gold;
+}
+
+.hidden {
+    opacity: 0;
+}

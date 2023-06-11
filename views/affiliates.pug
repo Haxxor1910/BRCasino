@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        include includes/head.pug
+    body
+        include includes/nav.pug
+        .jumbotron
+            h3
+                i.fas.fa-users
+                | &nbsp;Affiliates
+            .aff_top
+                .form-group
+                    label(for="aff_redeemcode") Redeem code
+                    small By redeeming someone's else code you will receive 10 
+                        i.fas.fa-coins.gold
+                        | &nbsp;FREE!
+                    input.form-control(id="aff_redeemcode", type="text", value="")
+                    button.btn.btn-success(id="aff_redemcodebtn")
+                        i.fas.fa-user-plus
+                        | &nbsp;Redeem
+                .form-group(style="margin-left: 100px;")
+                    label(for="aff_createcode") Create code
+                    small You can give your code to other people and you can earn 3% of their DEPOSITS!
+                    input.form-control(id="aff_createcode", type="text", value="")
+                    button.btn.btn-success(id="aff_createcodebtn")
+                        i.fas.fa-plus-square
+                        | &nbsp;Create
+            h4(style="margin-top: 25px;")
+                i.fas.fa-chart-area
+                | &nbsp;Statistics
+            .aff_statistics
+                .form-group
+                    label Users
+                    label Depositors
+                    label Earnings
+                    label Claimed
+                        
+                .form-group
+                    label.aff_users
+                        i.fas.fa-user
+                        | &nbsp;0
+                    label.aff_depositors
+                        i.fas.fa-user
+                        | &nbsp;0
+                    label.aff_earnings
+                        i.fas.fa-coins.gold
+                        | &nbsp;0
+                    label.aff_claimed
+                        i.fas.fa-coins.gold
+                        | &nbsp;0
+                .form-group
+                    button.btn.btn-warning(id="aff_collectearningsbtn")
+                        i.fas.fa-user-edit
+                        | &nbsp;Collect 
+                        i.fas.fa-coins.gold
+                        | &nbsp;0
+
+            
+
+
+        //- MODALS
+        include includes/modals.pug

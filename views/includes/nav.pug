@@ -1,0 +1,43 @@
+nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+    a.navbar-brand(href='/')
+        img(src="/img/main_text.png", style="width: 100px;")
+    button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarColor02' aria-controls='navbarColor02' aria-expanded='false' aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+    #navbarColor02.collapse.navbar-collapse
+        ul.navbar-nav.mr-auto
+            li.nav-item(data-link="/")
+                a.nav-link(href='/')
+                    i.fas.fa-home
+                    |  Roulette
+            li.nav-item(data-link="/duels")
+                a.nav-link(href='/duels')
+                    i.fas.fa-circle-notch
+                    |  Duels
+            li.nav-item(data-link="/jackpot")
+                a.nav-link(href='/jackpot')
+                    i.fas.fa-vector-square
+                    |  Jackpot
+            li.nav-item(data-link="/fair")
+                a.nav-link(href='/fair')
+                    i.fas.fa-check-circle
+                    |  Provably Fair
+            li.nav-item(data-link="/affiliates")
+                a.nav-link(href='/affiliates')
+                    i.fas.fa-users
+                    |  Affiliates
+                  
+        div.form-inline.my-2.my-lg-0
+            if !user
+                a(href="/auth/steam")
+                    img(src="/img/steam.png", style="width: 150px;")
+            else
+                .userProfile
+                    div.user-balance Balance:
+                        i.fas.fa-coins.gold
+                        | &nbsp;#{user.balance}
+                    span Logged in as&nbsp;
+                        a(href="/profile")
+                            b=user.username
+                        | &nbsp;
+                        span
+                            i.fas.fa-sign-out-alt(id="logout")

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        include includes/head.pug
+    body
+        include includes/nav.pug
+        .jumbotron.Roulette
+            .roulette
+                .roulette-roll-text
+                    .roll-text Connecting...
+                .progress
+                    .progress-bar.progress-bar-striped.progress-bar-animated(role='progressbar', aria-valuenow='100', aria-valuemin='0', aria-valuemax='100', style='width: 100%')
+                .roulette-wrapper
+                    .selector
+                    .wheel
+                .roulette-info
+                    .round_info Round hash: - Round created:
+                .roulette-set-bet
+                    .form-group(style="z-index: 999;")
+                        input.form-control(type="number", min="1", value="0", id="RBet")
+                    .form-group(style="z-index: 999;")
+                        button.btn.btn-danger.rbet(type="button", data-action="clear") CLEAR
+                        button.btn.btn-primary.rbet(type="button", data-action="+10") +10
+                        button.btn.btn-primary.rbet(type="button", data-action="+100") +100
+                        button.btn.btn-primary.rbet(type="button", data-action="+1000") +1,000
+                        button.btn.btn-primary.rbet(type="button", data-action="+10000") +10,000
+                        button.btn.btn-primary.rbet(type="button", data-action="+100000") +100,000
+                        button.btn.btn-primary.rbet(type="button", data-action="1/2") 1/2
+                        button.btn.btn-primary.rbet(type="button", data-action="x2") x2
+                    .form-group.rollsHistory
+                .roulette-bets
+                    .red-bets
+                        .red-bet.rbetbtn(data-bet="red") 1 to 7, Win 2x
+                        .red-players
+                    .green-bets
+                        .green-bet.rbetbtn(data-bet="green") 0, Win 14x
+                        .green-players
+                    .black-bets
+                        .black-bet.rbetbtn(data-bet="black") 8 to 14, Win 2x
+                        .black-players
+            .chat
+                .chat-header
+                    i.fas.fa-comment-dots.chatInt
+                    | &nbsp;Chat 
+                    span.onlineusers(style="font-size: 14px;") 0
+                .chat-messages
+                    //- .chat-message(data-steamid="123123123123")
+                    //-     .avatar
+                    //-         img(src='https://www.gravatar.com/avatar/47fc212c73eedb0d834e33ff7ff78339?s=256')
+                    //-     .user
+                    //-         .name Echo
+                    //-         .message
+                    //-         | This is a test message... asdsajd asdasjdasjdoaspjasopdsaopdjas poasjopasjdopasjdoas jdsaop das
+                .chat-body
+                    input.chat-input.form-control(type='text' placeholder='Type a message..')
+                    button.chat-btn.btn.btn-primary(type='button')
+                        i.fas.fa-paper-plane
+            #chatInt.chatInt(style="opacity: 0")
+                i.far.fa-comments
+            
+
+
+        //- MODALS
+        include includes/modals.pug
